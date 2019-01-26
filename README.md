@@ -49,17 +49,15 @@ Optimization is portrayed in terms of:
 Mathematically, we model our problem as an *optimization problem*,  and then use an *optimization algorithm* to solve it.
 
 ### What are optimization problems?
-Optimization problems are a set of equations in the form below, in which $x$ is the input vector of variables, $f$ is the objective function and $c_i$'s are the constraint functions (scalar functions of $x$) that define certain equations and inequalities that $x$ must satisfy.
-$$
-minimize \quad f(x)
-\\ \text{subject to } c_i \quad \, i =1,2,\dots,n
-$$
-The set of $x$'s that satisfy all of the $c_i$'s and are in $\mathcal{D}_f$, are called the **feasible set** for this problem; Also, if there is no $c_i$, the problem is called an *unconstrained optimization problem*, and otherwise, it's a *constrained* or *general* optimization problem.
+Optimization problems are a set of equations in the form below, in which `x` is the input vector of variables, `f` is the objective function and `Ci`s are the constraint functions (scalar functions of `x`) that define certain equations and inequalities that `x` must satisfy.
+
+
+The set of `x`'s that satisfy all of the `Ci`'s and are in Domain of `f`, are called the **feasible set** for this problem; Also, if there is no `Ci`, the problem is called an *unconstrained optimization problem*, and otherwise, it's a *constrained* or *general* optimization problem.
 ### How do optimization algorithms work?
-Optimization algorithms are normally some iterative algorithms, which begin with an initial guess of $x$ and then generate a sequence of improved estimates until they terminate (satisfy a certain criterion). The strategy to improve the estimation is the key difference between different algorithms.
+Optimization algorithms are normally some iterative algorithms, which begin with an initial guess of `x` and then generate a sequence of improved estimates until they terminate (satisfy a certain criterion). The strategy to improve the estimation is the key difference between different algorithms.
 
 ### Where is optimization used?
-As you might've guessed already, optimization can be used in a vast majority of fields and solve many kinds of problems, from solving a certain company's employee allocation problems, to defining best exchange portfolio based on a person's budget, or some well known (and hot - these days at least -) topics like finding the optimal parameters for a vide variety of machine learning algorithms like:
+As you might've guessed already, optimization can be used in a vast majority of fields and solve many kinds of problems, from solving a certain company's employee allocation problems, to defining best exchange portfolio based on a person's budget, or some well known (and hot -- these days at least) topics like finding the optimal parameters for a vide variety of machine learning algorithms like:
 * Different Regression Algorithms
 * Linear and Kernel SVMs
 * K-Means Clustering
@@ -118,17 +116,17 @@ These problems include estimating parameters of a known distribution and solving
 The course moves through defining some algorithms for solving constrained optimization problems. As *duality theorem* is used in these algorithms, or as it's used elsewhere for solving these problems (which we'll come to shortly), first the duality theorem and some of its applications in optimization are discussed and then they're used in solving the constrained optimization problems.
 
 ### Duality Theorem
-According to the *duality theorem*, we can find a dual problem for every optimization problem, which gives us a lower bound on the optimal value of $p^*$ (the optimal value for the original problem).
-Then comes two types of duality: ($d^*$ is the optimal value for the dual problem)
-* **Weak Duality:** $p^* \ge d^*$
-* **Strong Duality:** $p^* = d^*$
+According to the *duality theorem*, we can find a dual problem for every optimization problem, which gives us a lower bound on the optimal value of p* (the optimal value for the original problem).
+Then comes two types of duality: (d* is the optimal value for the dual problem)
+* **Weak Duality:** p* >= d*
+* **Strong Duality:** p* = d*
 
-And so, we call $p^* - d^*$ the duality gap for our dual and original problems. Thus, the dual problem can be used to find (exact or inexact) lower bounds on the optimal values of original problem.
+And so, we call p* - d* the **duality gap** for our dual and original problems. Thus, the dual problem can be used to find (exact or inexact) lower bounds on the optimal values of original problem.
 There comes some conditions such as **Salter's conditions** and **KKT conditions** to check for *strong duality*.
 > SVM for example, is a sample of an algorithm which can be solved using its duality problem.
 
 ### Solving Equality Constrained Problems
-Finally, the course moves on to solving the constrained problems. First we consider the equality constrained problems, in which each $c_i$ is an equality constraint, and there exists at least one $c_i$.
+Finally, the course moves on to solving the constrained problems. First we consider the equality constrained problems, in which each `Ci` is an equality constraint, and there exists at least one `Ci`.
 The methods for solving these problems include:
 * Eliminating Equality Constraints
 * Solving Dual Problem of the original problem
@@ -141,8 +139,8 @@ The methods for solving these problems include:
 
 ### Solving General Constrained Problems
 As the last topic, we move on solving the general constrained optimization problem.
-The approach taken here is to approximately formulate the inequality constrained problem as an equality constrained problem. We use a logarithmic barrier to make this approximation work, which gives us a **central path** defined based on the parameter of the logarithmic barrier (called $t$). Then two algorithms are used for calculating the optimal value using the *central path idea*:
+The approach taken here is to approximately formulate the inequality constrained problem as an equality constrained problem. We use a logarithmic barrier to make this approximation work, which gives us a **central path** defined based on the parameter of the logarithmic barrier (called `t`). Then two algorithms are used for calculating the optimal value using the *central path idea*:
 * Log Barrier Method
-	* The idea behind this method is to choose a small $t$ and a random starting point at the beginning and then increasing $t$ based on satisfying certain criterion until reaching the desired tolerance for each step.
+	* The idea behind this method is to choose a small `t` and a random starting point at the beginning and then increasing `t` based on satisfying certain criterion until reaching the desired tolerance for each step.
 * Primal Dual Interior Point Method
 	* The idea behind this algorithm is to use a modified version of the KKT conditions and compute a **primal dual search direction** in each step and use it in conjunction with a line search method to make a step in each iteration and continuing until reaching desired tolerance for primal and dual residuals.
