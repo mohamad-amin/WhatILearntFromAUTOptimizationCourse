@@ -1,3 +1,4 @@
+
 # What I learnt from the optimization course 
 
 Hi! I took the optimization course this semester (Fall 2018), which was offered for the master students under supervision of [Dr. Maryam Amirmazlaghani at AUT](http://ceit.aut.ac.ir/autcms/people/verticalPagesAjax/professorHomePage.htm?url=mazlaghani&depurl=computer-engineering&lang=en&cid=11875). As many of my friends and other students asked me about how the course was offered and what the main topics offered in the course are, I decided to write this article in an effort to further clarify what you can learn by taking this course, by sharing my own experiences from taking this course. Feel free to contribute to this article and hope you'll find it useful! 
@@ -46,19 +47,19 @@ Optimization is portrayed in terms of:
 * Finding the **variables** the **objective** depends on
 * Finding the values of the **variables** that optimize the *objective*
 
-Mathematically, we model our problem as an *optimization problem*,  and then use an *optimization algorithm* to solve it.
+Mathematically, we model our problem as an **optimization problem**,  and then use an **optimization algorithm** to solve it.
 
 ### What are optimization problems?
-Optimization problems are a set of equations in the form below, in which `x` is the input vector of variables, `f` is the objective function and `Ci`s are the constraint functions (scalar functions of `x`) that define certain equations and inequalities that `x` must satisfy.
+Optimization problems are a set of equations in the form below, in which `x` is the *input vector* of variables, `f` is the *objective function* and `Ci`s are the *constraint functions* (scalar functions of `x`) that define certain equations and inequalities that `x` must satisfy.
 
 ![Optimization Problem](https://wikimedia.org/api/rest_v1/media/math/render/svg/7b8beab031562d937314a4894ec449189f179219)
 
 The set of `x`'s that satisfy all of the `Ci`'s and are in Domain of `f`, are called the **feasible set** for this problem; Also, if there is no `Ci`, the problem is called an *unconstrained optimization problem*, and otherwise, it's a *constrained* or *general* optimization problem.
 ### How do optimization algorithms work?
-Optimization algorithms are normally some iterative algorithms, which begin with an initial guess of `x` and then generate a sequence of improved estimates until they terminate (satisfy a certain criterion). The strategy to improve the estimation is the key difference between different algorithms.
+Optimization algorithms are normally some **iterative algorithms**, which begin with an initial guess of `x` and then generate a **sequence of improved estimates** until they terminate (satisfy a certain criterion). The strategy to improve the estimation is the key difference between different algorithms.
 
 ### Where is optimization used?
-As you might've guessed already, optimization can be used in a vast majority of fields and solve many kinds of problems, from solving a certain company's employee allocation problems, to defining best exchange portfolio based on a person's budget, or some well known (and hot -- these days at least) topics like finding the optimal parameters for a vide variety of machine learning algorithms like:
+As you might've guessed already, optimization can be used in **a vast variety of fields** and solve many kinds of problems, from solving a certain company's employee allocation problems, to defining best exchange portfolio based on a person's budget, or some well known (and hot -- these days at least) topics like finding the optimal parameters for a vide variety of **machine learning algorithms** like:
 * Different Regression Algorithms
 * Linear and Kernel SVMs
 * K-Means Clustering
@@ -66,34 +67,34 @@ As you might've guessed already, optimization can be used in a vast majority of 
 * and so many more!
 
 As they say nowadays:
-> Optimization is the heart of machine learning.
+> **Optimization is the heart of machine learning.**
 
 ## Solving Optimization Problems
-Solving the optimization problems at the general form is a really tough challenge! There are currently (and probably, always :D) no efficient algorithms to solve the general optimization problem. Instead, we can solve some specific optimization problems efficiently called **linear programs**, **least square problems** and **convex problems**. General problems are usually solved in terms of defining the solving their *convex subproblems*.
+Solving the optimization problems at the general form is a really tough challenge! There are currently (and probably, always :D) no efficient algorithms to solve the general optimization problem. Instead, we can solve some specific optimization problems efficiently called [**linear programs**](https://en.wikipedia.org/wiki/Linear_programming), [**least square problems**](https://en.wikipedia.org/wiki/Least_squares) and [**convex problems**](https://en.wikipedia.org/wiki/Convex_optimization). General problems are usually solved in terms of defining the solving their *convex subproblems*.
 
 ### Defining Convex Problems
-The course then goes through defining **convex sets**, **convex functions** and some other related linear algebra stuff and some methods for checking if a function or set is convex or not, including some optimization problem equivalences that help defining convexity of functions and sets. It then uses these concepts to define and verify a **convex problem**, and also studying some attributes of these problems that help us in building efficient algorithms for solving these kind of problems.
+The course then goes through defining [**convex sets**](https://en.wikipedia.org/wiki/Convex_set), [**convex functions**](https://en.wikipedia.org/wiki/Convex_function) and some other related linear algebra stuff and some methods for checking if a function or set is convex or not, including some optimization [**problem equivalences**](https://www.google.com/search?q=optimization+problem+equivalent&oq=optimization+problem+equiva&aqs=chrome.1.69i57j0l2.6481j0j1&sourceid=chrome&ie=UTF-8) that help defining convexity of functions and sets. It then uses these concepts to define and verify a **convex problem**, and also studying some attributes of these problems that help us in building efficient algorithms for solving these kind of problems.
 
 ### Multi Objective Optimization Problems
-Another type of convex problems discussed are the *multi objective optimization problems* which introduces the idea of multiple dimensioned objective functions (or optimizing alike problems at the same times). There comes the introduction of **pareto optimal problems** and **scalarization** for these kinds of problems.
+Another type of convex problems discussed are the [*multi objective optimization problems*](https://en.wikipedia.org/wiki/Multi-objective_optimization) which introduces the idea of multiple dimensioned objective functions (or optimizing alike problems at the same times). There comes the introduction of [**pareto optimal problems**](https://en.wikipedia.org/wiki/Pareto_efficiency) and [**scalarization**](https://en.wikipedia.org/wiki/Multi-objective_optimization#Scalarizing) for these kinds of problems.
 
 ## Unconstrained Optimization
 Then the course moves on to introducing some algorithms for solving the unconstrained problems. The algorithms discusses are divided into two types:
 
 ### Line Search Methods
 These algorithms include two main steps in each iterations:
-1. Defining the direction in which we'll make the next step towards to optimal point. Approaches for this step include:
-	* Steepest descent direction
-	* Newton direction
-	* Quasi-newton directions
+1. **Defining the direction** in which we'll make the next step towards to optimal point. Approaches for this step include:
+	* [Steepest descent direction](https://en.wikipedia.org/wiki/Method_of_steepest_descent)
+	* [Newton direction](https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization)
+	* [Quasi-newton directions](https://en.wikipedia.org/wiki/Quasi-Newton_method)
 2. Calculating the step length for each iteration to take onside the direction chosen. The approaches for this part include:
-	* Backtrack Step length selection using *wolfe conditions*
-	* Cubic interpolation step length selection method
+	* [Backtrack](https://en.wikipedia.org/wiki/Backtracking_line_search) step length selection using [*wolfe conditions*](https://en.wikipedia.org/wiki/Wolfe_conditions)
+	* [Cubic interpolation](https://en.wikipedia.org/wiki/Bicubic_interpolation) step length selection method
 
 ### Trust Region Methods
 These algorithms define an area around the current point, and find a direction and a step length simultaneously to go to another point within the area defined, the algorithms discussed in this part are:
-* Cauchy Point Algorithm
-* DogLeg Algorithm
+* [Cauchy Point Algorithm](https://optimization.mccormick.northwestern.edu/index.php/Trust-region_methods)
+* [DogLeg Algorithm](http://www.numerical.rl.ac.uk/people/nimg/course/lectures/raphael/lectures/lec7slides.pdf)
 
 #### Implementation of these algorithms:
 I've implemented these algorithms and demonstrated their example usage in this repository as a homework for this course: [Unconstrained Optimization on GitHub](https://github.com/mohamad-amin/UnconstrainedOptimization)
@@ -111,10 +112,10 @@ These applications include several topics:
 * Robust Approximation
 
 ### Statistical Estimation
-These problems include estimating parameters of a known distribution and solving the well known **MLE** and **MAP** problems (using the methods described) which are used vastly in machine learning.
+These problems include estimating parameters of a known distribution and solving the well known [**MLE**](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation) and [**MAP**](https://en.wikipedia.org/wiki/Maximum_a_posteriori_estimation) problems (using the methods described) which are used vastly in machine learning.
 
 ## Constrained Optimization
-The course moves through defining some algorithms for solving constrained optimization problems. As *duality theorem* is used in these algorithms, or as it's used elsewhere for solving these problems (which we'll come to shortly), first the duality theorem and some of its applications in optimization are discussed and then they're used in solving the constrained optimization problems.
+The course moves through defining some algorithms for solving constrained optimization problems. As [*duality theorem*](https://en.wikipedia.org/wiki/Duality_(mathematics)) is used in these algorithms, or as it's used elsewhere for solving these problems (which we'll come to shortly), first the duality theorem and some of its applications in optimization are discussed and then they're used in solving the constrained optimization problems.
 
 ### Duality Theorem
 According to the *duality theorem*, we can find a dual problem for every optimization problem, which gives us a lower bound on the optimal value of p* (the optimal value for the original problem).
@@ -122,28 +123,24 @@ Then comes two types of duality: (d* is the optimal value for the dual problem)
 * **Weak Duality:** p* >= d*
 * **Strong Duality:** p* = d*
 
-And so, we call p* - d* the **duality gap** for our dual and original problems. Thus, the dual problem can be used to find (exact or inexact) lower bounds on the optimal values of original problem.
-There comes some conditions such as **Salter's conditions** and **KKT conditions** to check for *strong duality*.
+And so, we call p* - d* the [**duality gap**](https://en.wikipedia.org/wiki/Duality_gap) for our dual and original problems. Thus, the dual problem can be used to find (exact or inexact) lower bounds on the optimal values of original problem.
+There comes some conditions such as [**Salter's conditions**](https://en.wikipedia.org/wiki/Slater%27s_condition) and [**KKT conditions**](https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions) to check for *strong duality*.
 > SVM for example, is a sample of an algorithm which can be solved using its duality problem.
 
 ### Solving Equality Constrained Problems
 Finally, the course moves on to solving the constrained problems. First we consider the equality constrained problems, in which each `Ci` is an equality constraint, and there exists at least one `Ci`.
 The methods for solving these problems include:
-* Eliminating Equality Constraints
-* Solving Dual Problem of the original problem
-* Newton’s method
-	* This is a modification of the original newton algorithm which considers the equality constraint and uses duality to find a step length which both moves through the optimal point and takes into account the feasibility of the point according to the equality constraints.
-	* There is also another modification which enables this method to use some infeasible starting point.
-
--   Feasible Start
--   Infeasible Start
-
+* **Eliminating Equality Constraints**
+* **Solving Dual Problem** of the original problem
+* **Newton’s method**
+	* This is a *modification* of the original newton algorithm which considers the equality constraint and uses duality to find a step length which both moves through the optimal point and takes into account the feasibility of the point according to the equality constraints.
+	* There is also another modification which enables this method to use some *infeasible starting* point.
 ### Solving General Constrained Problems
 As the last topic, we move on solving the general constrained optimization problem.
-The approach taken here is to approximately formulate the inequality constrained problem as an equality constrained problem. We use a logarithmic barrier to make this approximation work, which gives us a **central path** defined based on the parameter of the logarithmic barrier (called `t`). Then two algorithms are used for calculating the optimal value using the *central path idea*:
-* Log Barrier Method
+The approach taken here is to approximately formulate the inequality constrained problem as an equality constrained problem. We use a [*logarithmic barrier*](https://en.wikipedia.org/wiki/Barrier_function) to make this approximation work, which gives us a [**central path**](http://www.seas.ucla.edu/~vandenbe/ee236a/lectures/cpath.pdf) defined based on the parameter of the *logarithmic barrier* (called `t`). Then two algorithms are used for calculating the optimal value using the *central path idea*:
+* [**Log Barrier Method**](http://www.stat.cmu.edu/~ryantibs/convexopt-S15/scribes/15-barr-method-scribed.pdf)
 	* The idea behind this method is to choose a small `t` and a random starting point at the beginning and then increasing `t` based on satisfying certain criterion until reaching the desired tolerance for each step.
-* Primal Dual Interior Point Method
+* [**Primal Dual Interior Point Method**](http://www.stat.cmu.edu/~ryantibs/convexopt-F15/lectures/16-primal-dual.pdf)
 	* The idea behind this algorithm is to use a modified version of the KKT conditions and compute a **primal dual search direction** in each step and use it in conjunction with a line search method to make a step in each iteration and continuing until reaching desired tolerance for primal and dual residuals.
 	
 I've implemented these two algorithms to run on a QP Program and demonstrated their example usage in this repository as a homework for this course: [Constrained Optimization for QP on GitHub](https://github.com/mohamad-amin/ConstrainedOptimization-QP)
