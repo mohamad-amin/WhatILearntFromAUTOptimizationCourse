@@ -1,6 +1,6 @@
 # What I learnt from the optimization course 
 
-Hi! I took the optimization course this semester, which is offered for master students under supervision of [Dr. Maryam Amirmazlaghani at AUT](http://ceit.aut.ac.ir/autcms/people/verticalPagesAjax/professorHomePage.htm?url=mazlaghani&depurl=computer-engineering&lang=en&cid=11875). As many of my friends and other students asked me about how the course was offered and what the main topics offered in the course are, I decided to write this article in an effort to further clarify what you can learn by taking this course, by sharing my own experiences from taking this course. Feel free to contribute to this article and hope you'll find it useful! 
+Hi! I took the optimization course this semester (Fall 2018), which was offered for the master students under supervision of [Dr. Maryam Amirmazlaghani at AUT](http://ceit.aut.ac.ir/autcms/people/verticalPagesAjax/professorHomePage.htm?url=mazlaghani&depurl=computer-engineering&lang=en&cid=11875). As many of my friends and other students asked me about how the course was offered and what the main topics offered in the course are, I decided to write this article in an effort to further clarify what you can learn by taking this course, by sharing my own experiences from taking this course. Feel free to contribute to this article and hope you'll find it useful! 
 
 ## Table of Contents
 * [Sources](#sources)
