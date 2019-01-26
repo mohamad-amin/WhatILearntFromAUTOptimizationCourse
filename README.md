@@ -51,6 +51,7 @@ Mathematically, we model our problem as an *optimization problem*,  and then use
 ### What are optimization problems?
 Optimization problems are a set of equations in the form below, in which `x` is the input vector of variables, `f` is the objective function and `Ci`s are the constraint functions (scalar functions of `x`) that define certain equations and inequalities that `x` must satisfy.
 
+![Optimization Problem](https://wikimedia.org/api/rest_v1/media/math/render/svg/7b8beab031562d937314a4894ec449189f179219)
 
 The set of `x`'s that satisfy all of the `Ci`'s and are in Domain of `f`, are called the **feasible set** for this problem; Also, if there is no `Ci`, the problem is called an *unconstrained optimization problem*, and otherwise, it's a *constrained* or *general* optimization problem.
 ### How do optimization algorithms work?
@@ -144,3 +145,5 @@ The approach taken here is to approximately formulate the inequality constrained
 	* The idea behind this method is to choose a small `t` and a random starting point at the beginning and then increasing `t` based on satisfying certain criterion until reaching the desired tolerance for each step.
 * Primal Dual Interior Point Method
 	* The idea behind this algorithm is to use a modified version of the KKT conditions and compute a **primal dual search direction** in each step and use it in conjunction with a line search method to make a step in each iteration and continuing until reaching desired tolerance for primal and dual residuals.
+	
+I've implemented these two algorithms to run on a QP Program and demonstrated their example usage in this repository as a homework for this course: [Constrained Optimization for QP on GitHub](https://github.com/mohamad-amin/ConstrainedOptimization-QP)
